@@ -1,5 +1,6 @@
 import Groq from 'groq-sdk';
 import server, { Request, Response} from 'express';
+import cors from 'cors';
 import { config } from 'dotenv';
 config();
 
@@ -9,6 +10,8 @@ interface IQuestion {
 }
 const app = server();
 const router = server.Router();
+
+app.use(cors());
 app.use(server.json());
 app.use('/api',router);
 
