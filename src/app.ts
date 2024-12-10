@@ -12,6 +12,7 @@ const app = server();
 const router = server.Router();
 
 app.use(cors());
+app.use(server.static('public'));
 app.use(server.json());
 app.use('/api',router);
 
